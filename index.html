@@ -1,49 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Boiler Tea | Bengaluru’s Favourite Tea Spot</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheBoiler Tea - Authentic South Indian Tea & Snacks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcf8f3;
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c87941' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="The Boiler Tea" class="logo">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="bg-amber-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <span class="text-xl font-bold playfair">TheBoiler Tea</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-amber-200 transition">Home</a>
+                <a href="#about" class="hover:text-amber-200 transition">About</a>
+                <a href="#menu" class="hover:text-amber-200 transition">Menu</a>
+                <a href="#gallery" class="hover:text-amber-200 transition">Gallery</a>
+                <a href="#contact" class="hover:text-amber-200 transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-amber-800 pb-4 px-4">
+            <a href="#home" class="block py-2 hover:text-amber-200 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-amber-200 transition">About</a>
+            <a href="#menu" class="block py-2 hover:text-amber-200 transition">Menu</a>
+            <a href="#gallery" class="block py-2 hover:text-amber-200 transition">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-amber-200 transition">Contact</a>
+        </div>
     </nav>
-  </header>
 
-  <section class="banner">
-    <h1>Welcome to The Boiler Tea!</h1>
-    <p>Your daily dose of hot, authentic tea & snacks</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-900 playfair leading-tight">
+                        Experience Authentic<br>
+                        <span class="text-amber-700">South Indian Tea</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-amber-800">
+                        Discover the rich flavors and aromatic blends of traditional South Indian tea, 
+                        paired with delicious authentic snacks.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#menu" class="bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-6 rounded-lg transition shadow-lg">
+                            View Our Menu
+                        </a>
+                        <a href="#contact" class="bg-white hover:bg-gray-100 text-amber-800 font-medium py-3 px-6 rounded-lg border border-amber-700 transition shadow-lg">
+                            Visit Us
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <svg class="absolute -top-10 -left-10 text-amber-500 opacity-20 w-32 h-32 z-0" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+                        </svg>
+                        <div class="bg-white p-4 rounded-2xl shadow-2xl z-10 relative">
+                            <svg class="w-full h-64 md:h-80" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#e6b17e" d="M275.29,124.58c-5.57-10.35-17.1-16.34-28.38-16.73s-22.12,4.33-31.8,10.22c-9.69,5.89-19.08,12.73-30.07,15.17-7.91,1.76-16.2.91-24.13-.77s-15.73-4.2-23.8-5.61c-8.07-1.42-16.59-1.39-23.86,2.36-9.46,4.85-14.57,15.1-16.62,25.51-2.05,10.41-1.11,21.14-2.56,31.62-1.45,10.48-5.53,21.1-14.05,27.27-4.56,3.3-10.09,5.13-15.18,7.43s-10.18,5.57-12.53,10.54c-3.4,7.17-.58,15.64,2.77,22.77a98.35,98.35,0,0,0,20.53,29.06c5.93,5.9,12.65,11.22,20.54,14.33s16.85,3.86,24.53.6c6.63-2.81,11.81-8.41,16.58-13.89,11.89-13.64,23.2-28.13,31.15-44.46s13.34-34.52,12.06-52.82c-.4-5.73-1.41-11.51-.5-17.18,1.33-8.3,6.31-15.42,11.45-22.12s10.57-13.77,12.75-22c.9-3.4,1.42-7.31,4.2-9.44,2.1-1.61,5-1.6,7.7-1.36,12.62,1.14,27.4-1.31,32.34-13.08C278.8,134.48,278.06,129.42,275.29,124.58Z" />
+                                <path fill="#8c5e3b" d="M176.59,183.09c-13.9,0-25.21-14.9-25.21-33.2s11.31-33.2,25.21-33.2,25.21,14.9,25.21,33.2S190.5,183.09,176.59,183.09Zm0-61.4c-11.15,0-20.21,12.65-20.21,28.2s9.06,28.2,20.21,28.2,20.21-12.65,20.21-28.2S187.74,121.69,176.59,121.69Z" />
+                                <path fill="#8c5e3b" d="M176.59,183.09a2.5,2.5,0,0,1-2.5-2.5V116.69a2.5,2.5,0,0,1,5,0v63.9A2.5,2.5,0,0,1,176.59,183.09Z" />
+                                <path fill="#8c5e3b" d="M208.3,149.89H144.88a2.5,2.5,0,0,1,0-5H208.3a2.5,2.5,0,0,1,0,5Z" />
+                                <path fill="#8c5e3b" d="M201.8,133.39H151.38a2.5,2.5,0,0,1,0-5H201.8a2.5,2.5,0,0,1,0,5Z" />
+                                <path fill="#8c5e3b" d="M201.8,166.39H151.38a2.5,2.5,0,0,1,0-5H201.8a2.5,2.5,0,0,1,0,5Z" />
+                                <path fill="#8c5e3b" d="M176.59,183.09a33.73,33.73,0,0,1-22.42-8.81,2.5,2.5,0,1,1,3.32-3.74c10.63,9.44,27.58,9.44,38.21,0a2.5,2.5,0,1,1,3.32,3.74A33.73,33.73,0,0,1,176.59,183.09Z" />
+                                <path fill="#8c5e3b" d="M199,149.89a2.5,2.5,0,0,1-1.66-4.37c10.63-9.44,10.63-24.81,0-34.25a2.5,2.5,0,1,1,3.32-3.74c13,11.58,13,30.15,0,41.73A2.48,2.48,0,0,1,199,149.89Z" />
+                                <path fill="#8c5e3b" d="M154.14,149.89a2.48,2.48,0,0,1-1.66-.63c-13-11.58-13-30.15,0-41.73a2.5,2.5,0,1,1,3.32,3.74c-10.63,9.44-10.63,24.81,0,34.25a2.5,2.5,0,0,1-1.66,4.37Z" />
+                                <path fill="#8c5e3b" d="M176.59,116.69a2.5,2.5,0,0,1-2.5-2.5,22.64,22.64,0,0,1,6.61-16.07,22.24,22.24,0,0,1,31.62,0,2.5,2.5,0,0,1-3.54,3.54,17.26,17.26,0,0,0-24.54,0,17.66,17.66,0,0,0-5.15,12.53A2.5,2.5,0,0,1,176.59,116.69Z" />
+                                <ellipse fill="#8c5e3b" cx="176.59" cy="183.09" rx="12.61" ry="5" />
+                                <path fill="#8c5e3b" d="M176.59,188.59c-8.16,0-15.11-2.47-15.11-7.5s7-7.5,15.11-7.5,15.11,2.47,15.11,7.5S184.76,188.59,176.59,188.59Zm0-10c-7.16,0-10.11,2.19-10.11,2.5s3,2.5,10.11,2.5,10.11-2.19,10.11-2.5S183.76,178.59,176.59,178.59Z" />
+                                <path fill="#8c5e3b" d="M176.59,188.59a2.5,2.5,0,0,1-2.5-2.5v-10a2.5,2.5,0,0,1,5,0v10A2.5,2.5,0,0,1,176.59,188.59Z" />
+                                <path fill="#8c5e3b" d="M186.7,186.09h-20.21a2.5,2.5,0,0,1,0-5H186.7a2.5,2.5,0,0,1,0,5Z" />
+                                <path fill="#8c5e3b" d="M183.7,181.09h-14.21a2.5,2.5,0,0,1,0-5H183.7a2.5,2.5,0,0,1,0,5Z" />
+                            </svg>
+                            <div class="text-center mt-4">
+                                <h3 class="text-xl font-semibold text-amber-800">Traditional Filter Coffee & Tea</h3>
+                                <p class="text-amber-700">Brewed to perfection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>The Boiler Tea is a retro-style tea hub inspired by Tamil Nadu’s boiler tea culture, now in the heart of Bengaluru. Serving fresh brewed tea and hand-picked snacks to match your mood.</p>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 playfair">Our Story</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mt-4"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="relative">
+                        <div class="bg-amber-100 absolute -top-4 -left-4 w-full h-full rounded-lg"></div>
+                        <div class="relative z-10 bg-amber-50 p-6 rounded-lg shadow-lg">
+                            <svg class="w-full h-64" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#e6b17e" d="M326.53,173.06c-2.82-7.95-8.91-14.56-16.45-18.1s-16.19-4.05-24.2-2.06c-7.84,1.95-15.23,6.3-20.14,12.78s-7.3,15.16-4.67,22.84c2.32,6.76,7.77,12.08,13.86,15.68s13.1,5.78,20.05,7.45c8.34,2,17.09,3.41,25.49,1.51s16.25-7.4,19.49-15.38c3.49-8.61,1.16-18.37-2.43-26.72" />
+                                <path fill="#8c5e3b" d="M285.2,186.64H261.53a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,0,1,3.17-3.17H285.2a3.17,3.17,0,0,1,3.17,3.17v16.33A3.17,3.17,0,0,1,285.2,186.64ZM264.7,180.3h17.33V170.31H264.7Z" />
+                                <path fill="#8c5e3b" d="M273.37,170.31a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,273.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M273.37,196.64a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,273.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M273.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,273.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M273.37,196.64c-8.74,0-15.83-7.32-15.83-16.33s7.09-16.33,15.83-16.33,15.83,7.32,15.83,16.33S282.1,196.64,273.37,196.64Zm0-26.33c-5.23,0-9.5,4.49-9.5,10s4.27,10,9.5,10,9.5-4.49,9.5-10S278.6,170.31,273.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M273.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,273.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M289.2,180.31H257.53a3.17,3.17,0,0,1,0-6.33H289.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M285.2,170.31H261.53a3.17,3.17,0,0,1,0-6.33H285.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M285.2,190.31H261.53a3.17,3.17,0,0,1,0-6.33H285.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M273.37,196.64a19.56,19.56,0,0,1-12.9-4.85,3.17,3.17,0,0,1,4.17-4.76c4.9,4.29,12.56,4.29,17.46,0a3.17,3.17,0,0,1,4.17,4.76A19.56,19.56,0,0,1,273.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M289.2,180.31a3.17,3.17,0,0,1-2.08-5.54c4.9-4.29,4.9-11.25,0-15.54a3.17,3.17,0,0,1,4.17-4.76c7.35,6.44,7.35,18.63,0,25.07A3.15,3.15,0,0,1,289.2,180.31Z" />
+                                <path fill="#8c5e3b" d="M257.53,180.31a3.15,3.15,0,0,1-2.08-.77c-7.35-6.44-7.35-18.63,0-25.07a3.17,3.17,0,0,1,4.17,4.76c-4.9,4.29-4.9,11.25,0,15.54a3.17,3.17,0,0,1-2.08,5.54Z" />
+                                <path fill="#8c5e3b" d="M273.37,160.31a3.17,3.17,0,0,1-3.17-3.17,10.41,10.41,0,0,1,3-7.37,10.23,10.23,0,0,1,14.5,0,3.17,3.17,0,1,1-4.48,4.48,3.93,3.93,0,0,0-5.55,0,4.09,4.09,0,0,0-1.17,2.89A3.17,3.17,0,0,1,273.37,160.31Z" />
+                                <ellipse fill="#8c5e3b" cx="273.37" cy="196.64" rx="6.33" ry="2.5" />
+                                <path fill="#8c5e3b" d="M273.37,199.64c-4.38,0-8.12-1.35-8.12-4.17s3.74-4.17,8.12-4.17,8.12,1.35,8.12,4.17S277.75,199.64,273.37,199.64Zm0-5c-3.25,0-4.79,1-4.79,1.67s1.54,1.67,4.79,1.67,4.79-1,4.79-1.67S276.62,194.64,273.37,194.64Z" />
+                                <path fill="#8c5e3b" d="M273.37,199.64a1.67,1.67,0,0,1-1.67-1.67v-5a1.67,1.67,0,0,1,3.33,0v5A1.67,1.67,0,0,1,273.37,199.64Z" />
+                                <path fill="#8c5e3b" d="M279.7,198h-12.67a1.67,1.67,0,0,1,0-3.33H279.7a1.67,1.67,0,0,1,0,3.33Z" />
+                                <path fill="#8c5e3b" d="M277.7,194.64H269a1.67,1.67,0,0,1,0-3.33h8.67a1.67,1.67,0,0,1,0,3.33Z" />
+                                <path fill="#e6b17e" d="M142.53,173.06c-2.82-7.95-8.91-14.56-16.45-18.1s-16.19-4.05-24.2-2.06c-7.84,1.95-15.23,6.3-20.14,12.78s-7.3,15.16-4.67,22.84c2.32,6.76,7.77,12.08,13.86,15.68s13.1,5.78,20.05,7.45c8.34,2,17.09,3.41,25.49,1.51s16.25-7.4,19.49-15.38c3.49-8.61,1.16-18.37-2.43-26.72" />
+                                <path fill="#8c5e3b" d="M101.2,186.64H77.53a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,0,1,3.17-3.17H101.2a3.17,3.17,0,0,1,3.17,3.17v16.33A3.17,3.17,0,0,1,101.2,186.64ZM80.7,180.3H98V170.31H80.7Z" />
+                                <path fill="#8c5e3b" d="M89.37,170.31a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,89.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M89.37,196.64a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,89.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M89.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,89.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M89.37,196.64c-8.74,0-15.83-7.32-15.83-16.33s7.09-16.33,15.83-16.33,15.83,7.32,15.83,16.33S98.1,196.64,89.37,196.64Zm0-26.33c-5.23,0-9.5,4.49-9.5,10s4.27,10,9.5,10,9.5-4.49,9.5-10S94.6,170.31,89.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M89.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,89.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M105.2,180.31H73.53a3.17,3.17,0,0,1,0-6.33H105.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M101.2,170.31H77.53a3.17,3.17,0,0,1,0-6.33H101.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M101.2,190.31H77.53a3.17,3.17,0,0,1,0-6.33H101.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M89.37,196.64a19.56,19.56,0,0,1-12.9-4.85,3.17,3.17,0,0,1,4.17-4.76c4.9,4.29,12.56,4.29,17.46,0a3.17,3.17,0,0,1,4.17,4.76A19.56,19.56,0,0,1,89.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M105.2,180.31a3.17,3.17,0,0,1-2.08-5.54c4.9-4.29,4.9-11.25,0-15.54a3.17,3.17,0,0,1,4.17-4.76c7.35,6.44,7.35,18.63,0,25.07A3.15,3.15,0,0,1,105.2,180.31Z" />
+                                <path fill="#8c5e3b" d="M73.53,180.31a3.15,3.15,0,0,1-2.08-.77c-7.35-6.44-7.35-18.63,0-25.07a3.17,3.17,0,0,1,4.17,4.76c-4.9,4.29-4.9,11.25,0,15.54a3.17,3.17,0,0,1-2.08,5.54Z" />
+                                <path fill="#8c5e3b" d="M89.37,160.31a3.17,3.17,0,0,1-3.17-3.17,10.41,10.41,0,0,1,3-7.37,10.23,10.23,0,0,1,14.5,0,3.17,3.17,0,1,1-4.48,4.48,3.93,3.93,0,0,0-5.55,0,4.09,4.09,0,0,0-1.17,2.89A3.17,3.17,0,0,1,89.37,160.31Z" />
+                                <ellipse fill="#8c5e3b" cx="89.37" cy="196.64" rx="6.33" ry="2.5" />
+                                <path fill="#8c5e3b" d="M89.37,199.64c-4.38,0-8.12-1.35-8.12-4.17s3.74-4.17,8.12-4.17,8.12,1.35,8.12,4.17S93.75,199.64,89.37,199.64Zm0-5c-3.25,0-4.79,1-4.79,1.67s1.54,1.67,4.79,1.67,4.79-1,4.79-1.67S92.62,194.64,89.37,194.64Z" />
+                                <path fill="#8c5e3b" d="M89.37,199.64a1.67,1.67,0,0,1-1.67-1.67v-5a1.67,1.67,0,0,1,3.33,0v5A1.67,1.67,0,0,1,89.37,199.64Z" />
+                                <path fill="#8c5e3b" d="M95.7,198H83a1.67,1.67,0,0,1,0-3.33H95.7a1.67,1.67,0,0,1,0,3.33Z" />
+                                <path fill="#8c5e3b" d="M93.7,194.64H85a1.67,1.67,0,0,1,0-3.33h8.67a1.67,1.67,0,0,1,0,3.33Z" />
+                                <path fill="#e6b17e" d="M234.53,173.06c-2.82-7.95-8.91-14.56-16.45-18.1s-16.19-4.05-24.2-2.06c-7.84,1.95-15.23,6.3-20.14,12.78s-7.3,15.16-4.67,22.84c2.32,6.76,7.77,12.08,13.86,15.68s13.1,5.78,20.05,7.45c8.34,2,17.09,3.41,25.49,1.51s16.25-7.4,19.49-15.38c3.49-8.61,1.16-18.37-2.43-26.72" />
+                                <path fill="#8c5e3b" d="M193.2,186.64H169.53a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,0,1,3.17-3.17H193.2a3.17,3.17,0,0,1,3.17,3.17v16.33A3.17,3.17,0,0,1,193.2,186.64ZM172.7,180.3H190V170.31H172.7Z" />
+                                <path fill="#8c5e3b" d="M181.37,170.31a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,181.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M181.37,196.64a3.17,3.17,0,0,1-3.17-3.17v-6.33a3.17,3.17,0,1,1,6.33,0v6.33A3.17,3.17,0,0,1,181.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M181.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,181.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M181.37,196.64c-8.74,0-15.83-7.32-15.83-16.33s7.09-16.33,15.83-16.33,15.83,7.32,15.83,16.33S190.1,196.64,181.37,196.64Zm0-26.33c-5.23,0-9.5,4.49-9.5,10s4.27,10,9.5,10,9.5-4.49,9.5-10S186.6,170.31,181.37,170.31Z" />
+                                <path fill="#8c5e3b" d="M181.37,196.64a3.17,3.17,0,0,1-3.17-3.17V167.14a3.17,3.17,0,1,1,6.33,0v26.33A3.17,3.17,0,0,1,181.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M197.2,180.31H165.53a3.17,3.17,0,0,1,0-6.33H197.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M193.2,170.31H169.53a3.17,3.17,0,0,1,0-6.33H193.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M193.2,190.31H169.53a3.17,3.17,0,0,1,0-6.33H193.2a3.17,3.17,0,0,1,0,6.33Z" />
+                                <path fill="#8c5e3b" d="M181.37,196.64a19.56,19.56,0,0,1-12.9-4.85,3.17,3.17,0,0,1,4.17-4.76c4.9,4.29,12.56,4.29,17.46,0a3.17,3.17,0,0,1,4.17,4.76A19.56,19.56,0,0,1,181.37,196.64Z" />
+                                <path fill="#8c5e3b" d="M197.2,180.31a3.17,3.17,0,0,1-2.08-5.54c4.9-4.29,4.9-11.25,0-15.54a3.17,3.17,0,0,1,4.17-4.76c7.35,6.44,7.35,18.63,0,25.07A3.15,3.15,0,0,1,197.2,180.31Z" />
+                                <path fill="#8c5e3b" d="M165.53,180.31a3.15,3.15,0,0,1-2.08-.77c-7.35-6.44-7.35-18.63,0-25.07a3.17,3.17,0,0,1,4.17,4.76c-4.9,4.29-4.9,11.25,0,15.54a3.17,3.17,0,0,1-2.08,5.54Z" />
+                                <path fill="#8c5e3b" d="M181.37,160.31a3.17,3.17,0,0,1-3.17-3.17,10.41,10.41,0,0,1,3-7.37,10.23,10.23,0,0,1,14.5,0,3.17,3.17,0,1,1-4.48,4.48,3.93,3.93,0,0,0-5.55,0,4.09,4.09,0,0,0-1.17,2.89A3.17,3.17,0,0,1,181.37,160.31Z" />
+                                <ellipse fill="#8c5e3b" cx="181.37" cy="196.64" rx="6.33" ry="2.5" />
+                                <path fill="#8c5e3b" d="M181.37,199.64c-4.38,0-8.12-1.35-8.12-4.17s3.74-4.17,8.12-4.17,8.12,1.35,8.12,4.17S185.75,199.64,181.37,199.64Zm0-5c-3.25,0-4.79,1-4.79,1.67s1.54,1.67,4.79,1.67,4.79-1,4.79-1.67S184.62,194.64,181.37,194.64Z" />
+                                <path fill="#8c5e3b" d="M181.37,199.64a1.67,1.67,0,0,1-1.67-1.67v-5a1.67,1.67,0,0,1,3.33,0v5A1.67,1.67,0,0,1,181.37,199.64Z" />
+                                <path fill="#8c5e3b" d="M187.7,198H175a1.67,1.67,0,0,1,0-3.33h12.67a1.67,1.67,0,0,1,0,3.33Z" />
+                                <path fill="#8c5e3b" d="M185.7,194.64H177a1.67,1.67,0,0,1,0-3.33h8.67a1.67,1.67,0,0,1,0,3.33Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-semibold text-amber-800 mb-4 playfair">Authentic South Indian Tea Experience</h3>
+                    <p class="text-gray-700 mb-6">
+                        At TheBoiler Tea, we bring the rich heritage of South Indian tea culture to your cup. 
+                        Our journey began with a passion for authentic flavors and traditional brewing methods 
+                        that have been perfected over generations.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Every cup of our tea is carefully crafted using premium tea leaves sourced directly 
+                        from the lush plantations of South India. We take pride in our traditional brewing 
+                        process that extracts the perfect balance of flavor, aroma, and strength.
+                    </p>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-amber-100 rounded-full p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="text-gray-700">Premium quality tea leaves</span>
+                    </div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="bg-amber-100 rounded-full p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="text-gray-700">Traditional brewing methods</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-amber-100 rounded-full p-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="text-gray-700">Authentic South Indian snacks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <img src="images/snacks.jpg" alt="Our Tea & Snacks">
-    <p>Check out our signature teas and munchies!</p>
-    <a href="menu.pdf" download class="btn">Download Full Menu</a>
-  </section>
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 playfair">Our Menu</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mt-4"></div>
+                <p class="text-amber-800 mt-4">Discover our authentic South Indian tea and snacks</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tea Menu Items -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#8c5e3b" d="M150,100c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M140,100c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <path fill="#8c5e3b" d="M130,100c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                            <path fill="#fff" d="M125,100c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                            <path fill="#8c5e3b" d="M115,100c0,8.28-6.72,15-15,15s-15-6.72-15-15,6.72-15,15-15,15,6.72,15,15Z"/>
+                            <path fill="#e6b17e" d="M110,100c0,5.52-4.48,10-10,10s-10-4.48-10-10,4.48-10,10-10,10,4.48,10,10Z"/>
+                            <path fill="#8c5e3b" d="M105,100c0,2.76-2.24,5-5,5s-5-2.24-5-5,2.24-5,5-5,5,2.24,5,5Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Filter Coffee</h3>
+                        <p class="text-gray-600 mb-4">Traditional South Indian filter coffee brewed to perfection with freshly ground coffee beans.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹40</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Bestseller</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#8c5e3b" d="M150,120c0,16.57-22.39,30-50,30s-50-13.43-50-30,22.39-30,50-30,50,13.43,50,30Z"/>
+                            <path fill="#e6b17e" d="M140,120c0,11.05-17.91,20-40,20s-40-8.95-40-20,17.91-20,40-20,40,8.95,40,20Z"/>
+                            <rect fill="#8c5e3b" x="60" y="80" width="80" height="40" rx="5"/>
+                            <rect fill="#e6b17e" x="65" y="85" width="70" height="30" rx="3"/>
+                            <path fill="#fff" d="M125,100c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Masala Chai</h3>
+                        <p class="text-gray-600 mb-4">Aromatic tea infused with a blend of spices including cardamom, cinnamon, and ginger.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹30</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Popular</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#8c5e3b" d="M150,120c0,16.57-22.39,30-50,30s-50-13.43-50-30,22.39-30,50-30,50,13.43,50,30Z"/>
+                            <path fill="#e6b17e" d="M140,120c0,11.05-17.91,20-40,20s-40-8.95-40-20,17.91-20,40-20,40,8.95,40,20Z"/>
+                            <rect fill="#8c5e3b" x="60" y="80" width="80" height="40" rx="5"/>
+                            <rect fill="#e6b17e" x="65" y="85" width="70" height="30" rx="3"/>
+                            <path fill="#90ee90" d="M125,100c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Ginger Tea</h3>
+                        <p class="text-gray-600 mb-4">Refreshing tea with fresh ginger extract, perfect for soothing the throat and boosting immunity.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹35</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Healthy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Snack Menu Items -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle fill="#f9d6a5" cx="100" cy="100" r="50"/>
+                            <circle fill="#e6b17e" cx="100" cy="100" r="40"/>
+                            <path fill="#8c5e3b" d="M130,100c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Vada</h3>
+                        <p class="text-gray-600 mb-4">Crispy South Indian savory donut made from urad dal, served with coconut chutney.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹45</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Classic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#f9d6a5" x="50" y="70" width="100" height="60" rx="5"/>
+                            <rect fill="#e6b17e" x="55" y="75" width="90" height="50" rx="3"/>
+                            <circle fill="#8c5e3b" cx="75" cy="100" r="10"/>
+                            <circle fill="#8c5e3b" cx="100" cy="100" r="10"/>
+                            <circle fill="#8c5e3b" cx="125" cy="100" r="10"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Idli</h3>
+                        <p class="text-gray-600 mb-4">Soft and fluffy steamed rice cakes served with sambar and coconut chutney.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹40</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Healthy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <div class="h-48 bg-amber-200 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#f9d6a5" d="M150,100c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M140,100c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <path fill="#8c5e3b" d="M130,100c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                            <path fill="#f9d6a5" d="M120,100c0,11.05-8.95,20-20,20s-20-8.95-20-20,8.95-20,20-20,20,8.95,20,20Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-amber-900 mb-2">Bonda</h3>
+                        <p class="text-gray-600 mb-4">Deep-fried spicy potato balls coated in gram flour batter, a perfect tea-time snack.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-medium">₹35</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-medium py-3 px-8 rounded-lg transition shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Visit us at: <strong>Jayanagar, Bengaluru</strong></p>
-    <p>Call/WhatsApp: <a href="tel:+919876543210">+91 98765 43210</a></p>
-    <p>Follow us on <a href="https://instagram.com/theboilertea" target="_blank">Instagram</a></p>
-  </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 playfair">Gallery</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mt-4"></div>
+                <p class="text-amber-800 mt-4">A glimpse of our authentic South Indian tea experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <path fill="#8c5e3b" d="M200,150c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M190,150c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <path fill="#8c5e3b" d="M180,150c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                            <path fill="#fff" d="M175,150c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                            <path fill="#8c5e3b" d="M165,150c0,8.28-6.72,15-15,15s-15-6.72-15-15,6.72-15,15-15,15,6.72,15,15Z"/>
+                            <path fill="#e6b17e" d="M160,150c0,5.52-4.48,10-10,10s-10-4.48-10-10,4.48-10,10-10,10,4.48,10,10Z"/>
+                            <path fill="#8c5e3b" d="M155,150c0,2.76-2.24,5-5,5s-5-2.24-5-5,2.24-5,5-5,5,2.24,5,5Z"/>
+                            <path fill="#8c5e3b" d="M300,150c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M290,150c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <path fill="#8c5e3b" d="M280,150c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                            <path fill="#fff" d="M275,150c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                            <path fill="#8c5e3b" d="M265,150c0,8.28-6.72,15-15,15s-15-6.72-15-15,6.72-15,15-15,15,6.72,15,15Z"/>
+                            <path fill="#e6b17e" d="M260,150c0,5.52-4.48,10-10,10s-10-4.48-10-10,4.48-10,10-10,10,4.48,10,10Z"/>
+                            <path fill="#8c5e3b" d="M255,150c0,2.76-2.24,5-5,5s-5-2.24-5-5,2.24-5,5-5,5,2.24,5,5Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Traditional Filter Coffee</h3>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <circle fill="#f9d6a5" cx="200" cy="150" r="80"/>
+                            <circle fill="#e6b17e" cx="200" cy="150" r="70"/>
+                            <circle fill="#8c5e3b" cx="200" cy="150" r="50"/>
+                            <circle fill="#f9d6a5" cx="200" cy="150" r="30"/>
+                            <circle fill="#8c5e3b" cx="200" cy="150" r="20"/>
+                            <circle fill="#f9d6a5" cx="200" cy="150" r="10"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Crispy Vada</h3>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <rect fill="#f9d6a5" x="100" y="100" width="200" height="100" rx="10"/>
+                            <rect fill="#e6b17e" x="110" y="110" width="180" height="80" rx="5"/>
+                            <circle fill="#fff" cx="150" cy="150" r="20"/>
+                            <circle fill="#fff" cx="200" cy="150" r="20"/>
+                            <circle fill="#fff" cx="250" cy="150" r="20"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Soft Idli</h3>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <path fill="#8c5e3b" d="M250,170c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M240,170c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <rect fill="#8c5e3b" x="150" y="80" width="100" height="50" rx="5"/>
+                            <rect fill="#e6b17e" x="155" y="85" width="90" height="40" rx="3"/>
+                            <path fill="#90ee90" d="M225,130c0,13.81-11.19,25-25,25s-25-11.19-25-25,11.19-25,25-25,25,11.19,25,25Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Masala Chai with Mint</h3>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <path fill="#f9d6a5" d="M250,150c0,27.61-22.39,50-50,50s-50-22.39-50-50,22.39-50,50-50,50,22.39,50,50Z"/>
+                            <path fill="#e6b17e" d="M240,150c0,22.09-17.91,40-40,40s-40-17.91-40-40,17.91-40,40-40,40,17.91,40,40Z"/>
+                            <path fill="#8c5e3b" d="M230,150c0,16.57-13.43,30-30,30s-30-13.43-30-30,13.43-30,30-30,30,13.43,30,30Z"/>
+                            <path fill="#f9d6a5" d="M220,150c0,11.05-8.95,20-20,20s-20-8.95-20-20,8.95-20,20-20,20,8.95,20,20Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Potato Bonda</h3>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <div class="h-64 bg-amber-100 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="#e6b17e" width="400" height="300"/>
+                            <rect fill="#8c5e3b" x="120" y="100" width="160" height="100" rx="10"/>
+                            <rect fill="#e6b17e" x="130" y="110" width="140" height="80" rx="5"/>
+                            <circle fill="#f9d6a5" cx="150" cy="150" r="15"/>
+                            <circle fill="#f9d6a5" cx="200" cy="150" r="15"/>
+                            <circle fill="#f9d6a5" cx="250" cy="150" r="15"/>
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-amber-800">Mysore Pak</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 The Boiler Tea. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white playfair">Visit Us</h2>
+                <div class="w-24 h-1 bg-amber-200 mx-auto mt-4"></div>
+                <p class="text-amber-100 mt-4">Come experience the authentic taste of South India</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-amber-700 p-8 rounded-lg shadow-lg h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Our Location</h3>
+                        <div class="flex items-start mb-6">
+                            <div class="mr-4 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-amber-200">Address</h4>
+                                <p class="mt-1">123 Tea Garden Road, Chennai, Tamil Nadu, India - 600001</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-6">
+                            <div class="mr-4 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-amber-200">Opening Hours</h4>
+                                <p class="mt-1">Monday - Sunday: 6:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-amber-200">Contact</h4>
+                                <p class="mt-1">Phone:```
